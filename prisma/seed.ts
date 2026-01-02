@@ -1,53 +1,82 @@
-// prisma/seed.ts
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { PrismaClient } = require('@prisma/client');
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const fs = require('fs');
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const Papa = require('papaparse');
+import { PrismaClient } from '@prisma/client';
+import fs from 'fs';
+import Papa from 'papaparse';
 
 const prisma = new PrismaClient();
 
 async function main() {
-    const csvFile = fs.readFileSync('./khuyen_mai_25000_SEM.csv', 'utf8');
+    console.log("🚀 Bắt đầu...");
 
-    Papa.parse(csvFile, {
-        header: true,
-        skipEmptyLines: true,
-        complete: async (results: any) => {
-            console.log(`Đã đọc ${results.data.length} dòng từ file CSV...`);
+    const filePath = './khuyen_mai_150000_topgia.csv';
 
-            const dataToInsert = results.data
-                .map((item: any) => {
-                    const rawCode = item.code || item.Code || item.CODE;
+    // Check file trước cho chắc
+    if (!fs.existsSync(filePath)) {
+        console.error(`❌ Lỗi to đùng: Không thấy file ${filePath} đâu cả!`);
+        return;
+    }
 
-                    if (!rawCode) return null;
+    const csvFile = fs.readFileSync(filePath, 'utf8');
 
-                    return {
-                        code: rawCode.trim(),
-                        brand: "SEMI",
-                        isUsed: false
-                    };
-                })
-                .filter(Boolean);
+    // QUAN TRỌNG: Gói vào Promise để bắt buộc Node.js phải chờ
+    await new Promise<void>((resolve, reject) => {
+        Papa.parse(csvFile, {
+            header: true,
+            skipEmptyLines: true,
+            complete: async (results: any) => {
+                try {
+                    const totalRows = results.data.length;
+                    console.log(`📄 Đọc xong CSV. Tổng: ${totalRows} dòng.`);
 
-            if (dataToInsert.length === 0) {
-                console.error("❌ Không tìm thấy cột 'Code' nào trong file CSV!");
-                return;
+                    const dataToInsert = results.data
+                        .map((item: any) => {
+                            const rawCode = item.code || item.Code || item.CODE;
+                            if (!rawCode) return null;
+                            return {
+                                code: rawCode.trim(),
+                                brand: "TOPGIA", // Sửa brand theo ý bạn
+                                isUsed: false,
+                            };
+                        })
+                        .filter((item: any) => item !== null);
+
+                    console.log(`🔍 Tìm thấy ${dataToInsert.length} mã hợp lệ.`);
+
+                    // CHIA GÓI (CHUNK)
+                    const BATCH_SIZE = 1000;
+                    let totalInserted = 0;
+
+                    for (let i = 0; i < dataToInsert.length; i += BATCH_SIZE) {
+                        const chunk = dataToInsert.slice(i, i + BATCH_SIZE);
+
+                        const result = await prisma.rewardCode.createMany({
+                            data: chunk,
+                            skipDuplicates: true // Postgres only
+                        });
+
+                        totalInserted += result.count;
+                        console.log(`   ✅ Gói ${i}: Đã nạp +${result.count} mã.`);
+                    }
+
+                    console.log(`🎉 Xong! Tổng cộng: ${totalInserted} mã.`);
+                    resolve(); // Báo hiệu đã xong việc
+                } catch (error) {
+                    console.error("❌ Lỗi trong lúc insert:", error);
+                    reject(error); // Báo lỗi
+                }
+            },
+            error: (err: any) => {
+                reject(err);
             }
-
-            try {
-                const result = await prisma.rewardCode.createMany({
-                    data: dataToInsert,
-                    // skipDuplicates: true // Nếu DB của bạn hỗ trợ (MongoDB không hỗ trợ trực tiếp ở createMany)
-                });
-                console.log(`✅ Thành công! Đã nạp ${result.count} mã vào brand: TOPGIA`);
-            } catch (error) {
-                console.error("❌ Lỗi: ", error);
-            }
-        }
+        });
     });
 }
 
-main();
+main()
+    .catch((e) => {
+        console.error(e);
+        process.exit(1);
+    })
+    .finally(async () => {
+        await prisma.$disconnect();
+    });

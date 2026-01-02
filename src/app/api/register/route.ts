@@ -1,5 +1,6 @@
+export const runtime = 'edge';
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import {prisma} from "@/lib/prisma";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export async function POST(request: Request) {
     try {
