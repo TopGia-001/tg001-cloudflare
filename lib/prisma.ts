@@ -1,16 +1,14 @@
-import { Pool } from 'pg';
-import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge'
+import { withAccelerate } from '@prisma/extension-accelerate'
 
-const connectionString = process.env.DATABASE_URL;
+const prismaClientSingleton = () => {
+    return new PrismaClient().$extends(withAccelerate())
+}
 
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
+declare global {
+    var prismaGlobal: undefined | ReturnType<typeof prismaClientSingleton>
+}
 
-// Khởi tạo Prisma Client với Adapter
-// globalThis để tránh lỗi "Too many connections" khi dev hot-reload
-const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
+export const prisma = globalThis.prismaGlobal ?? prismaClientSingleton()
 
-export const prisma = globalForPrisma.prisma || new PrismaClient({ adapter });
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') globalThis.prismaGlobal = prisma
