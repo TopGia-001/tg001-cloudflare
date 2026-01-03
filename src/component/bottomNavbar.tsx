@@ -36,10 +36,10 @@ export default function BottomNavbar({ hideDecor = false }: { hideDecor?: boolea
         {/* DECOR */}
         {!hideDecor && (
             <>
-              <div className="hidden xl:block fixed bottom-[60px] left-0 z-50 w-20 pointer-events-none">
+              <div className="hidden xl:block fixed bottom-[0] left-0 z-50 pointer-events-none">
                 <Image src="/assets/decor-left.png" alt="Decor Left" width={300} height={300} className="w-full h-auto object-contain" />
               </div>
-              <div className="hidden xl:block fixed bottom-[60px] right-0 z-50 w-24 pointer-events-none">
+              <div className="hidden xl:block fixed bottom-[0] right-0 z-50 pointer-events-none">
                 <Image src="/assets/decor-right.png" alt="Decor Right" width={300} height={300} className="w-full h-auto object-contain" />
               </div>
             </>
