@@ -112,7 +112,7 @@ export default function RegisterPage() {
             </header>
 
             <main
-                className="relative z-10 flex-1 flex flex-col justify-end w-full max-w-[1400px] mx-auto px-4 md:px-10 xl:px-8 pb-32 md:pb-40 xl:pb-16 pt-4">
+                className="relative z-10 flex-1 flex flex-col justify-center md:justify-end w-full max-w-[1400px] mx-auto px-4 md:px-10 xl:px-8 pb-32 md:pb-40 xl:pb-24 pt-20 md:pt-32 transition-all overflow-x-hidden overflow-y-auto">
                 <form onSubmit={handleSubmit(onSubmit)}
                       className="flex flex-col xl:flex-row items-center xl:items-start justify-center w-full gap-6 md:gap-8 xl:gap-12">
 
