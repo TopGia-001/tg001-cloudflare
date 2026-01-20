@@ -98,13 +98,13 @@ export default function WinnersPageV2() {
 
           {/* HEADER */}
           <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
-            <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
+            <div className="col-span-3 px-3 py-2 border-b-2 border-r border-l border-t text-center">
               Mã dự thưởng
             </div>
-            <div className="col-span-6 px-3 py-2 border-b-2 border-r text-center">
+            <div className="col-span-6 px-3 py-2 border-b-2 border-r border-t text-center">
               Phần thưởng
             </div>
-            <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
+            <div className="col-span-3 px-3 py-2 border-b-2 border-r border-t text-center">
               Khách hàng
             </div>
           </div>
@@ -112,8 +112,8 @@ export default function WinnersPageV2() {
           {/* BODY */}
           <div className="divide-y divide-gray-200">
             {winners.map((item, index) => (
-              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-gray-800">
-                <div className="col-span-3 px-3 py-2 border-b border-r text-center">
+              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold">
+                <div className="col-span-3 px-3 py-2 border-b border-r border-l text-center">
                   {item.code}
                 </div>
                 <div className="col-span-6 px-3 py-2 border-b border-r text-center">
