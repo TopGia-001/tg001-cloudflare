@@ -82,7 +82,7 @@ export default function BottomNavbar({ hideDecor = false }: { hideDecor?: boolea
               />
 
               <NavItem
-                  href="/winners"
+                  href="/winners-v2"
                   icon={<List size={20} />}
                   label={<>Danh sách<br />trúng thưởng</>}
               />
