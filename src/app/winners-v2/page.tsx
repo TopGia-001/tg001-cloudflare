@@ -6,14 +6,14 @@ import Link from "next/link";
 
 const winners = [
   {
-    code: "PTN5FWCSWS",
+    code: "P7NFSLWCWS",
     prize: "Máy hút bụi lau nhà cầm tay Roborock F25 ACE Combo",
-    name: "Nguyễn Đỗ Đăng",
+    name: "Nguyễn Dạ Đang",
   },
   {
-    code: "SEMB7HZMJX",
+    code: "SEMB7HZYMJ",
     prize: "Máy giặt sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
-    name: "Lê Thị Đình Khương",
+    name: "Lý Trần Đình Khương",
   },
   {
     code: "CP6YM7CZAS",
@@ -91,23 +91,23 @@ export default function WinnersPageV2() {
           drop-shadow-lg mb-6"
           style={{ paintOrder: "stroke fill" }}
         >
-          CẬP NHẬT NGƯỜI TRÚNG GIẢI
+          CÔNG BỐ NGƯỜI THẮNG GIẢI ĐỢI 1 CỦA TOPGIA
         </h1>
 
         {/* TABLE CONTAINER */}
-<div className="w-full max-w-[1200px] bg-[#701318]/90 rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
+<div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
 
   <div className="overflow-hidden rounded-xl border border-white/30 bg-white">
 
     {/* HEADER */}
-    <div className="grid grid-cols-12 bg-[#b91c1c] text-white text-[11px] md:text-[13px] font-bold uppercase">
-      <div className="col-span-3 px-3 py-2 border-r border-white/20">
+    <div className="shopee-bold grid grid-cols-12 bg-[#b91c1c] text-white text-[11px] md:text-[13px] font-bold uppercase">
+      <div className="col-span-3 px-3 py-2 border-b-2 border-white text-center">
         Mã dự thưởng
       </div>
-      <div className="col-span-6 px-3 py-2 border-r border-white/20">
+      <div className="col-span-6 px-3 py-2 border-b-2 border-white text-center">
         Phần thưởng
       </div>
-      <div className="col-span-3 px-3 py-2">
+      <div className="col-span-3 px-3 py-2 border-b-2 border-white text-center">
         Khách hàng
       </div>
     </div>
@@ -117,17 +117,17 @@ export default function WinnersPageV2() {
       {winners.map((item, index) => (
         <div
           key={index}
-          className="grid grid-cols-12 text-[12px] md:text-[14px] text-gray-800"
+          className="grid grid-cols-12 text-[12px] md:text-[14px] shopee-bold text-gray-800"
         >
-          <div className="col-span-3 px-3 py-2 font-bold text-[#701318] border-r">
+          <div className="col-span-3 px-3 py-2 border-b text-center text-[#701318]">
             {item.code}
           </div>
 
-          <div className="col-span-6 px-3 py-2 border-r">
+          <div className="col-span-6 px-3 py-2 border-b text-center">
             {item.prize}
           </div>
 
-          <div className="col-span-3 px-3 py-2 font-semibold">
+          <div className="col-span-3 px-3 py-2 border-b text-center">
             {item.name}
           </div>
         </div>
