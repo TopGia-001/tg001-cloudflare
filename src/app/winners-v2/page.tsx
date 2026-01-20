@@ -42,7 +42,6 @@ const winners = [
   },
 ];
 
-
 export default function WinnersPageV2() {
   return (
     <div className="min-h-[100dvh] w-full flex flex-col font-sans bg-[#C40405] relative overflow-hidden">
@@ -95,47 +94,39 @@ export default function WinnersPageV2() {
         </h1>
 
         {/* TABLE CONTAINER */}
-<div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
+        <div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
 
-  <div className="overflow-hidden rounded-xl border border-white/30 bg-white">
-
-    {/* HEADER */}
-    <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
-      <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
-        Mã dự thưởng
-      </div>
-      <div className="col-span-6 px-3 py-2 border-b-2 border-r text-center">
-        Phần thưởng
-      </div>
-      <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
-        Khách hàng
-      </div>
-    </div>
-
-    {/* BODY */}
-    <div className="divide-y divide-gray-200">
-      {winners.map((item, index) => (
-        <div
-          key={index}
-          className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-gray-800"
-        >
-          <div className="col-span-3 px-3 py-2 border-b border-r text-center">
-            {item.code}
+          {/* HEADER */}
+          <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
+            <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
+              Mã dự thưởng
+            </div>
+            <div className="col-span-6 px-3 py-2 border-b-2 border-r text-center">
+              Phần thưởng
+            </div>
+            <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
+              Khách hàng
+            </div>
           </div>
 
-          <div className="col-span-6 px-3 py-2 border-b border-r text-center">
-            {item.prize}
+          {/* BODY */}
+          <div className="divide-y divide-gray-200">
+            {winners.map((item, index) => (
+              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-gray-800">
+                <div className="col-span-3 px-3 py-2 border-b border-r text-center">
+                  {item.code}
+                </div>
+                <div className="col-span-6 px-3 py-2 border-b border-r text-center">
+                  {item.prize}
+                </div>
+                <div className="col-span-3 px-3 py-2 border-b border-r text-center">
+                  {item.name}
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="col-span-3 px-3 py-2 border-b border-r text-center">
-            {item.name}
-          </div>
         </div>
-      ))}
-    </div>
-
-  </div>
-</div>
       </main>
 
       {/* BOTTOM NAVBAR */}
@@ -146,4 +137,3 @@ export default function WinnersPageV2() {
     </div>
   );
 }
-
