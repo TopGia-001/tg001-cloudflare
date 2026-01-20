@@ -48,14 +48,14 @@ export default function WinnersPageV2() {
 
       {/* BACKGROUND */}
       <div className="hidden xl:block fixed inset-0 z-0 w-full h-full">
-        <Image src="/assets/bg-simple.webp" alt="BG Desktop" fill className="object-fill" priority />
+        <Image src="/assets/bg-winner.webp" alt="BG Desktop" fill className="object-fill" priority />
       </div>
       <div className="hidden md:block xl:hidden fixed inset-0 z-0 w-full h-full">
         <Image src="/assets/bg-simple.webp" alt="BG Tablet" fill className="object-cover object-top" priority />
       </div>
       <div className="md:hidden fixed top-[45px] left-0 z-0 w-[100vw] h-[100dvh]">
         <Image
-          src="/assets/bg-simple-mobile.webp"
+          src="/assets/bg-winner-mobile.webp"
           alt="BG Mobile"
           fill
           priority
@@ -98,13 +98,13 @@ export default function WinnersPageV2() {
 
           {/* HEADER */}
           <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
-            <div className="col-span-4 px-1 py-2 border-b-2 border-r border-l border-t text-center">
+            <div className="col-span-4 md:col-span-3 px-1 py-2 border-b-2 border-r border-l border-t text-center">
               Mã dự thưởng
             </div>
             <div className="col-span-6 px-3 py-2 border-b-2 border-r border-t text-center">
               Phần thưởng
             </div>
-            <div className="col-span-2 px-3 py-2 border-b-2 border-r border-t text-center">
+            <div className="col-span-2 md:col-span-3 px-3 py-2 border-b-2 border-r border-t text-center">
               Khách hàng
             </div>
           </div>
@@ -113,13 +113,13 @@ export default function WinnersPageV2() {
           <div className="divide-y divide-gray-200">
             {winners.map((item, index) => (
               <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold">
-                <div className="col-span-4 px-1 py-2 border-b border-r border-l text-center">
+                <div className="col-span-4 md:col-span-3 px-1 py-2 border-b border-r border-l text-center">
                   {item.code}
                 </div>
                 <div className="col-span-6 px-3 py-2 border-b border-r text-center">
                   {item.prize}
                 </div>
-                <div className="col-span-2 px-3 py-2 border-b border-r text-center">
+                <div className="col-span-2 md:col-span-3 px-3 py-2 border-b border-r text-center">
                   {item.name}
                 </div>
               </div>
