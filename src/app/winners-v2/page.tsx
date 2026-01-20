@@ -112,7 +112,7 @@ export default function WinnersPageV2() {
           {/* BODY */}
           <div className="divide-y divide-gray-200">
             {winners.map((item, index) => (
-              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold">
+              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-black">
                 <div className="col-span-4 md:col-span-3 px-1 py-2 border-b border-r border-l text-center">
                   {item.code}
                 </div>
