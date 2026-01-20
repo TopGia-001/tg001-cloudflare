@@ -9,7 +9,7 @@ const winners = Array.from({ length: 24 }).map((_, i) => ({
   prize: "Xe máy điện Vinfast Feliz 2025",
 }));
 
-export default function WinnersPage() {
+export default function WinnersPageV2() {
   return (
     <div className="min-h-[100dvh] w-full flex flex-col font-sans bg-[#C40405] relative overflow-hidden">
 
