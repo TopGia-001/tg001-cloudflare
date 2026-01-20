@@ -112,14 +112,14 @@ export default function WinnersPageV2() {
           {/* BODY */}
           <div className="divide-y divide-gray-200">
             {winners.map((item, index) => (
-              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold">
-                <div className="col-span-3 px-3 py-2 border-b border-r border-l text-center">
+              <div key={index} className="flex flex-wrap text-[12px] md:text-[18px] shopee-bold">
+                <div className="w-full sm:w-1/3 px-3 py-2 border-b border-r text-center">
                   {item.code}
                 </div>
-                <div className="col-span-6 px-3 py-2 border-b border-r text-center">
+                <div className="w-full sm:w-1/2 px-3 py-2 border-b border-r text-center">
                   {item.prize}
                 </div>
-                <div className="col-span-3 px-3 py-2 border-b border-r text-center">
+                <div className="w-full sm:w-1/3 px-3 py-2 border-b border-r text-center">
                   {item.name}
                 </div>
               </div>
