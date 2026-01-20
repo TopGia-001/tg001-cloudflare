@@ -28,12 +28,12 @@ type RegisterFormData = z.infer<typeof registerSchema>;
 type SubmitStatus = 'IDLE' | 'SUCCESS' | 'USED' | 'INVALID' | 'EXCEED'| 'ERROR';
 
 export default function RegisterPage() {
-    const router = useRouter();
-
-    // Logic redirect hardcode
-    useEffect(() => {
-        router.push('/maintain');
-    }, [router]);
+    // const router = useRouter();
+    //
+    // // Logic redirect hardcode
+    // useEffect(() => {
+    //     router.push('/maintain');
+    // }, [router]);
 
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState<SubmitStatus>('IDLE');
