@@ -16,28 +16,28 @@ const winners = [
     name: "Lý Trần Đình Khương",
   },
   {
-    code: "CP6YM7CZAS",
-    prize: "Smart Tivi QLED Samsung AI 4K 65 inch QA65Q85",
+    code: "CP6YM7CZA5",
+    prize: "Smart Tivi QLED Samsung AI 4K 65 inch QA65Q8F5",
     name: "Nguyễn Thị Luyến",
   },
   {
-    code: "KVTPRZL55J",
+    code: "KVTPRL7SSJ",
     prize: "Máy lọc nước nóng lạnh Kangaroo KG10A17",
-    name: "Nguyễn Do Đăng",
+    name: "Nguyễn Dạ Đang",
   },
   {
-    code: "SEMZL4HHNH",
-    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
-    name: "Nguyễn Trọng Nhơn",
+    code: "SEML74HNNH",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Nguyễn Trần Trọng Nhân",
   },
   {
-    code: "9XNZHCCYDC",
-    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
-    name: "Trương Gia Lộc",
+    code: "9XNZHCCY7D",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Trương Gia Lệ",
   },
   {
-    code: "FS8BW05Z5",
-    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
+    code: "FSBEBWDSZ5",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
     name: "Lương Duyên",
   },
 ];
@@ -100,14 +100,14 @@ export default function WinnersPageV2() {
   <div className="overflow-hidden rounded-xl border border-white/30 bg-white">
 
     {/* HEADER */}
-    <div className="shopee-bold grid grid-cols-12 bg-[#b91c1c] text-white text-[11px] md:text-[13px] font-bold uppercase">
-      <div className="col-span-3 px-3 py-2 border-b-2 border-white text-center">
+    <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
+      <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
         Mã dự thưởng
       </div>
-      <div className="col-span-6 px-3 py-2 border-b-2 border-white text-center">
+      <div className="col-span-6 px-3 py-2 border-b-2 border-r text-center">
         Phần thưởng
       </div>
-      <div className="col-span-3 px-3 py-2 border-b-2 border-white text-center">
+      <div className="col-span-3 px-3 py-2 border-b-2 border-r text-center">
         Khách hàng
       </div>
     </div>
@@ -117,17 +117,17 @@ export default function WinnersPageV2() {
       {winners.map((item, index) => (
         <div
           key={index}
-          className="grid grid-cols-12 text-[12px] md:text-[14px] shopee-bold text-gray-800"
+          className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-gray-800"
         >
-          <div className="col-span-3 px-3 py-2 border-b text-center text-[#701318]">
+          <div className="col-span-3 px-3 py-2 border-b border-r text-center">
             {item.code}
           </div>
 
-          <div className="col-span-6 px-3 py-2 border-b text-center">
+          <div className="col-span-6 px-3 py-2 border-b border-r text-center">
             {item.prize}
           </div>
 
-          <div className="col-span-3 px-3 py-2 border-b text-center">
+          <div className="col-span-3 px-3 py-2 border-b border-r text-center">
             {item.name}
           </div>
         </div>
