@@ -4,10 +4,44 @@ import { Home, MoreHorizontal, X } from "lucide-react";
 import BottomNavbar from "@/src/component/bottomNavbar";
 import Link from "next/link";
 
-const winners = Array.from({ length: 24 }).map((_, i) => ({
-  name: "Nguyễn Văn A",
-  prize: "Xe máy điện Vinfast Feliz 2025",
-}));
+const winners = [
+  {
+    code: "PTN5FWCSWS",
+    prize: "Máy hút bụi lau nhà cầm tay Roborock F25 ACE Combo",
+    name: "Nguyễn Đỗ Đăng",
+  },
+  {
+    code: "SEMB7HZMJX",
+    prize: "Máy giặt sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
+    name: "Lê Thị Đình Khương",
+  },
+  {
+    code: "CP6YM7CZAS",
+    prize: "Smart Tivi QLED Samsung AI 4K 65 inch QA65Q85",
+    name: "Nguyễn Thị Luyến",
+  },
+  {
+    code: "KVTPRZL55J",
+    prize: "Máy lọc nước nóng lạnh Kangaroo KG10A17",
+    name: "Nguyễn Do Đăng",
+  },
+  {
+    code: "SEMZL4HHNH",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
+    name: "Nguyễn Trọng Nhơn",
+  },
+  {
+    code: "9XNZHCCYDC",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
+    name: "Trương Gia Lộc",
+  },
+  {
+    code: "FS8BW05Z5",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU BHR5860EU 27W",
+    name: "Lương Duyên",
+  },
+];
+
 
 export default function WinnersPageV2() {
   return (
@@ -61,38 +95,47 @@ export default function WinnersPageV2() {
         </h1>
 
         {/* TABLE CONTAINER */}
-        <div className="w-full max-w-[1200px] bg-[#701318]/90 rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
+<div className="w-full max-w-[1200px] bg-[#701318]/90 rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
 
-          {/* GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+  <div className="overflow-hidden rounded-xl border border-white/30 bg-white">
 
-            {winners.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl px-4 py-3 flex flex-col items-center justify-center text-center shadow-md"
-              >
-                <span className="font-bold text-[#701318] text-[14px] md:text-[15px]">
-                  {item.name}
-                </span>
+    {/* HEADER */}
+    <div className="grid grid-cols-12 bg-[#b91c1c] text-white text-[11px] md:text-[13px] font-bold uppercase">
+      <div className="col-span-3 px-3 py-2 border-r border-white/20">
+        Mã dự thưởng
+      </div>
+      <div className="col-span-6 px-3 py-2 border-r border-white/20">
+        Phần thưởng
+      </div>
+      <div className="col-span-3 px-3 py-2">
+        Khách hàng
+      </div>
+    </div>
 
-                <span className="mt-1 text-[13px] md:text-[14px] font-semibold text-gray-800">
-                  {item.prize}
-                </span>
-              </div>
-            ))}
-
+    {/* BODY */}
+    <div className="divide-y divide-gray-200">
+      {winners.map((item, index) => (
+        <div
+          key={index}
+          className="grid grid-cols-12 text-[12px] md:text-[14px] text-gray-800"
+        >
+          <div className="col-span-3 px-3 py-2 font-bold text-[#701318] border-r">
+            {item.code}
           </div>
 
-          {/* PAGINATION (giống ảnh) */}
-          <div className="flex justify-center items-center gap-3 mt-4 text-white font-bold text-sm">
-            <button className="w-8 h-8 rounded-full bg-white/20">‹</button>
-            {[1, 2, 3, "...", 14, 15].map((p, i) => (
-              <span key={i} className="px-1 opacity-90">{p}</span>
-            ))}
-            <button className="w-8 h-8 rounded-full bg-white/20">›</button>
+          <div className="col-span-6 px-3 py-2 border-r">
+            {item.prize}
           </div>
 
+          <div className="col-span-3 px-3 py-2 font-semibold">
+            {item.name}
+          </div>
         </div>
+      ))}
+    </div>
+
+  </div>
+</div>
       </main>
 
       {/* BOTTOM NAVBAR */}
