@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 async function main() {
     console.log("🚀 Bắt đầu...");
 
-    const filePath = './khuyen_mai_50_topgia.csv';
+    const filePath = './khuyen_mai_100000_topgia_them.csv';
 
     // Check file trước cho chắc
     if (!fs.existsSync(filePath)) {

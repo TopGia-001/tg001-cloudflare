@@ -1,7 +1,8 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Home, MoreHorizontal, X, Calendar, Loader2 } from 'lucide-react';
 import BottomNavbar from "@/src/component/bottomNavbar";
@@ -27,6 +28,13 @@ type RegisterFormData = z.infer<typeof registerSchema>;
 type SubmitStatus = 'IDLE' | 'SUCCESS' | 'USED' | 'INVALID' | 'EXCEED'| 'ERROR';
 
 export default function RegisterPage() {
+    const router = useRouter();
+
+    // Logic redirect hardcode
+    useEffect(() => {
+        router.push('/maintain');
+    }, [router]);
+
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState<SubmitStatus>('IDLE');
 
