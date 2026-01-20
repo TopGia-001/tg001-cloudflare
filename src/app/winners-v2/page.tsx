@@ -98,7 +98,7 @@ export default function WinnersPageV2() {
 
           {/* HEADER */}
           <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
-            <div className="col-span-3 px-3 py-2 border-b-2 border-r border-l border-t text-center">
+            <div className="col-span-3 px-1 py-2 border-b-2 border-r border-l border-t text-center">
               Mã dự thưởng
             </div>
             <div className="col-span-6 px-3 py-2 border-b-2 border-r border-t text-center">
@@ -112,14 +112,14 @@ export default function WinnersPageV2() {
           {/* BODY */}
           <div className="divide-y divide-gray-200">
             {winners.map((item, index) => (
-              <div key={index} className="flex flex-wrap text-[12px] md:text-[18px] shopee-bold">
-                <div className="w-full sm:w-1/3 px-3 py-2 border-b border-r text-center">
+              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold">
+                <div className="col-span-3 px-1 py-2 border-b border-r border-l text-center">
                   {item.code}
                 </div>
-                <div className="w-full sm:w-1/2 px-3 py-2 border-b border-r text-center">
+                <div className="col-span-6 px-3 py-2 border-b border-r text-center">
                   {item.prize}
                 </div>
-                <div className="w-full sm:w-1/3 px-3 py-2 border-b border-r text-center">
+                <div className="col-span-3 px-3 py-2 border-b border-r text-center">
                   {item.name}
                 </div>
               </div>
