@@ -23,7 +23,7 @@ const winners = [
   {
     code: "KVTPRL7SSJ",
     prize: "Máy lọc nước nóng lạnh Kangaroo KG10A17",
-    name: "Nguyễn Dạ Đang",
+    name: "Thái Thị Trúc Ly",
   },
   {
     code: "SEML74HNNH",
