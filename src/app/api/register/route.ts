@@ -7,10 +7,6 @@ export async function POST(request: Request) {
         const body = await request.json();
         const { rewardCode } = body;
 
-        await prisma.codeAttempt.create({
-            data: { code: rewardCode }
-        });
-
         const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
         const attemptCount = await prisma.codeAttempt.count({
             where: {
@@ -22,6 +18,10 @@ export async function POST(request: Request) {
         if (attemptCount > 3) {
             return NextResponse.json({ status: "EXCEED" }, { status: 429 });
         }
+        
+        await prisma.codeAttempt.create({
+            data: { code: rewardCode }
+        });
 
         const codeData = await prisma.rewardCode.findUnique({
             where: { code: rewardCode },
