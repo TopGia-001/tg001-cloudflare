@@ -180,18 +180,18 @@ export default function WinnersPageV2() {
 
       {/* BACKGROUND */}
       <div className="hidden xl:block fixed inset-0 z-0 w-full h-full">
-        <Image src="/assets/bg-winner.webp" alt="BG Desktop" fill className="object-fill" priority />
+        <Image src="/assets/bg-simple.webp" alt="BG Desktop" fill className="object-fill" priority />
       </div>
       <div className="hidden md:block xl:hidden fixed inset-0 z-0 w-full h-full">
         <Image src="/assets/bg-simple.webp" alt="BG Tablet" fill className="object-cover object-top" priority />
       </div>
       <div className="md:hidden fixed top-[45px] left-0 z-0 w-[100vw] h-[100dvh]">
         <Image
-          src="/assets/bg-winner-mobile.webp"
+          src="/assets/bg-simple-mobile.webp"
           alt="BG Mobile"
           fill
           priority
-          className="object-cover object-top scale-[1.25]"
+          className="object-cover object-top"
         />
       </div>
 
