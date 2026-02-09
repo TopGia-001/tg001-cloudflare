@@ -110,34 +110,9 @@ const winnersRound2 = [
   },
 ];
 
-function WinnersTable({ title, data }: { title: string; data: any[] }) {
+function WinnersTable({ data }: { data: any[] }) {
   return (
     <div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30 mb-10">
-      
-      {/* TIÊU ĐỀ ĐỢT */}
-      <h2 className="text-center text-[#C40405] font-black text-[16px] md:text-[28px] mb-4 uppercase">
-        {title}
-      </h2>
-      <div className="flex justify-center mb-4">
-        <span
-          className="
-            shopee-bold
-            border-2
-            border-yellow-400
-            text-white
-            font-black
-            uppercase
-            px-6 md:px-10
-            py-1.5 md:py-2
-            rounded-full
-            text-[14px] md:text-[20px]
-            tracking-wide
-          "
-        >
-          {title}
-        </span>
-      </div>
-
       {/* HEADER */}
       <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
         <div className="col-span-4 md:col-span-3 px-1 py-2 border-b-2 border-r border-l border-t text-center">
@@ -170,6 +145,30 @@ function WinnersTable({ title, data }: { title: string; data: any[] }) {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function RoundBadge({ title }: { title: string }) {
+  return (
+    <div className="shopee-extrabold flex justify-center mb-3">
+      <h1
+        className="
+          border-2
+          border-yellow-400
+          text-white
+          font-black
+          px-6 md:px-10
+          py-1.5 md:py-2
+          rounded-full
+          text-[22px] md:text-[40px]
+          tracking-wide
+          [-webkit-text-stroke:5px_#701318] md:[-webkit-text-stroke:9px_#701318]
+          drop-shadow-lg mb-6
+        "
+      >
+        {title}
+      </h1>
     </div>
   );
 }
@@ -225,9 +224,11 @@ export default function WinnersPageV2() {
           CÔNG BỐ NGƯỜI THẮNG GIẢI CỦA TOPGIA
         </h1>
 
-        <WinnersTable title="ĐỢT 1" data={winnersRound1} />
+        <RoundBadge title="Đợt 1" />
+        <WinnersTable data={winnersRound1} />
 
-        <WinnersTable title="ĐỢT 2" data={winnersRound2} />
+        <RoundBadge title="Đợt 2" />
+        <WinnersTable data={winnersRound2} />
       </main>
 
       {/* BOTTOM NAVBAR */}
