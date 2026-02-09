@@ -6,39 +6,69 @@ import Link from "next/link";
 
 const winners = [
   {
-    code: "P7NFSLWCWS",
+    code: "HPD2XV573L",
+    prize: "Xe máy điện Vinfast Feliz 2025",
+    name: "Trần Thị Minh Nguyệt",
+  },
+  {
+    code: "SWTDQAXWUF",
     prize: "Máy hút bụi lau nhà cầm tay Roborock F25 ACE Combo",
-    name: "Nguyễn Dạ Đang",
+    name: "Đào Thị Dung",
   },
   {
-    code: "SEMB7HZYMJ",
-    prize: "Máy giặt sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
-    name: "Lý Trần Đình Khương",
+    code: "SEMQM69NZY",
+    prize: "Máy Giặt/Sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
+    name: "Nguyễn Thị Thanh Thanh",
   },
   {
-    code: "CP6YM7CZA5",
-    prize: "Smart Tivi QLED Samsung AI 4K 65 inch QA65Q8F5",
-    name: "Nguyễn Thị Luyến",
+    code: "984TNS7936",
+    prize: "Máy Giặt/Sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
+    name: "Lê Huỳnh Như Lan",
   },
   {
-    code: "KVTPRL7SSJ",
+    code: "XNYNLYSGBV",
+    prize: "Smart Tivi QLED Samsung Al 4K 65 inch QA65Q8F5",
+    name: "Nguyễn Thị Thu Giang",
+  },
+  {
+    code: "E32BCXFFNR",
+    prize: "Smart Tivi QLED Samsung Al 4K 65 inch QA65Q8F5",
+    name: "Huỳnh Thị Phương Nhi",
+  },
+  {
+    code: "QYRWUCRGXC",
     prize: "Máy lọc nước nóng lạnh Kangaroo KG10A17",
-    name: "Thái Thị Trúc Ly",
+    name: "Lê Đình Cường",
   },
   {
-    code: "SEML74HNNH",
+    code: "8LU56FPVQH",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Nguyễn Trần Trọng Nhân",
+    name: "Nguyễn Thị Thảo",
   },
   {
-    code: "9XNZHCCY7D",
+    code: "SEMESDAK9C",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Trương Gia Lệ",
+    name: "Nguyễn Thụy Bích Duyên",
   },
   {
-    code: "FSBEBWDSZ5",
+    code: "HWGGM8E8SR",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Lương Duyên",
+    name: "Nguyễn Phùng Như Ý",
+  },
+  {
+    code: "GLTRCZ9TAP",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Trần Thị Bích Hiền",
+  },
+  {
+    code: "SEMFUJL6QW",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Thị Cẩm Hào",
+  },
+  {
+    code: "FWV29HXXWY",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Tẩn San Mẩy",
   },
 ];
 
@@ -90,7 +120,7 @@ export default function WinnersPageV2() {
           drop-shadow-lg mb-6"
           style={{ paintOrder: "stroke fill" }}
         >
-          CÔNG BỐ NGƯỜI THẮNG GIẢI ĐỢI 1 CỦA TOPGIA
+          CÔNG BỐ NGƯỜI THẮNG GIẢI ĐỢI 2 CỦA TOPGIA
         </h1>
 
         {/* TABLE CONTAINER */}
