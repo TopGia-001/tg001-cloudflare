@@ -166,6 +166,7 @@ function RoundBadge({ title }: { title: string }) {
           [-webkit-text-stroke:5px_#701318] md:[-webkit-text-stroke:9px_#701318]
           drop-shadow-lg mb-6
         "
+        style={{ paintOrder: "stroke fill" }}
       >
         {title}
       </h1>
