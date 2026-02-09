@@ -4,7 +4,45 @@ import { Home, MoreHorizontal, X } from "lucide-react";
 import BottomNavbar from "@/src/component/bottomNavbar";
 import Link from "next/link";
 
-const winners = [
+const winnersRound1 = [
+  {
+    code: "P7NFSLWCWS",
+    prize: "Máy hút bụi lau nhà cầm tay Roborock F25 ACE Combo",
+    name: "Nguyễn Dạ Đang",
+  },
+  {
+    code: "SEMB7HZYMJ",
+    prize: "Máy giặt sấy Samsung Inverter 9.5 Kg WD95T4046CE/SV",
+    name: "Lý Trần Đình Khương",
+  },
+  {
+    code: "CP6YM7CZA5",
+    prize: "Smart Tivi QLED Samsung AI 4K 65 inch QA65Q8F5",
+    name: "Nguyễn Thị Luyến",
+  },
+  {
+    code: "KVTPRL7SSJ",
+    prize: "Máy lọc nước nóng lạnh Kangaroo KG10A17",
+    name: "Thái Thị Trúc Ly",
+  },
+  {
+    code: "SEML74HNNH",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Nguyễn Trần Trọng Nhân",
+  },
+  {
+    code: "9XNZHCCY7D",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Trương Gia Lệ",
+  },
+  {
+    code: "FSBEBWDSZ5",
+    prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
+    name: "Lương Duyên",
+  },
+];
+
+const winnersRound2 = [
   {
     code: "HPD2XV573L",
     prize: "Xe máy điện Vinfast Feliz 2025",
@@ -72,6 +110,70 @@ const winners = [
   },
 ];
 
+function WinnersTable({ title, data }: { title: string; data: any[] }) {
+  return (
+    <div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30 mb-10">
+      
+      {/* TIÊU ĐỀ ĐỢT */}
+      <h2 className="text-center text-[#C40405] font-black text-[16px] md:text-[28px] mb-4 uppercase">
+        {title}
+      </h2>
+      <div className="flex justify-center mb-4">
+        <span
+          className="
+            shopee-bold
+            border-2
+            border-yellow-400
+            text-white
+            font-black
+            uppercase
+            px-6 md:px-10
+            py-1.5 md:py-2
+            rounded-full
+            text-[14px] md:text-[20px]
+            tracking-wide
+          "
+        >
+          {title}
+        </span>
+      </div>
+
+      {/* HEADER */}
+      <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
+        <div className="col-span-4 md:col-span-3 px-1 py-2 border-b-2 border-r border-l border-t text-center">
+          Mã dự thưởng
+        </div>
+        <div className="col-span-6 px-3 py-2 border-b-2 border-r border-t text-center">
+          Phần thưởng
+        </div>
+        <div className="col-span-2 md:col-span-3 px-3 py-2 border-b-2 border-r border-t text-center">
+          Khách hàng
+        </div>
+      </div>
+
+      {/* BODY */}
+      <div className="divide-y divide-gray-200">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-black"
+          >
+            <div className="col-span-4 md:col-span-3 px-1 py-2 border-b border-r border-l text-center">
+              {item.code}
+            </div>
+            <div className="col-span-6 px-3 py-2 border-b border-r text-center">
+              {item.prize}
+            </div>
+            <div className="col-span-2 md:col-span-3 px-3 py-2 border-b border-r text-center">
+              {item.name}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function WinnersPageV2() {
   return (
     <div className="min-h-[100dvh] w-full flex flex-col font-sans bg-[#C40405] relative overflow-hidden">
@@ -120,43 +222,12 @@ export default function WinnersPageV2() {
           drop-shadow-lg mb-6"
           style={{ paintOrder: "stroke fill" }}
         >
-          CÔNG BỐ NGƯỜI THẮNG GIẢI ĐỢI 2 CỦA TOPGIA
+          CÔNG BỐ NGƯỜI THẮNG GIẢI CỦA TOPGIA
         </h1>
 
-        {/* TABLE CONTAINER */}
-        <div className="w-full max-w-[1200px] bg-white rounded-2xl p-3 md:p-5 shadow-2xl border border-white/30">
+        <WinnersTable title="ĐỢT 1" data={winnersRound1} />
 
-          {/* HEADER */}
-          <div className="shopee-bold grid grid-cols-12 bg-white text-black text-[11px] md:text-[22px] font-bold uppercase">
-            <div className="col-span-4 md:col-span-3 px-1 py-2 border-b-2 border-r border-l border-t text-center">
-              Mã dự thưởng
-            </div>
-            <div className="col-span-6 px-3 py-2 border-b-2 border-r border-t text-center">
-              Phần thưởng
-            </div>
-            <div className="col-span-2 md:col-span-3 px-3 py-2 border-b-2 border-r border-t text-center">
-              Khách hàng
-            </div>
-          </div>
-
-          {/* BODY */}
-          <div className="divide-y divide-gray-200">
-            {winners.map((item, index) => (
-              <div key={index} className="grid grid-cols-12 text-[12px] md:text-[18px] shopee-bold text-black">
-                <div className="col-span-4 md:col-span-3 px-1 py-2 border-b border-r border-l text-center">
-                  {item.code}
-                </div>
-                <div className="col-span-6 px-3 py-2 border-b border-r text-center">
-                  {item.prize}
-                </div>
-                <div className="col-span-2 md:col-span-3 px-3 py-2 border-b border-r text-center">
-                  {item.name}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
+        <WinnersTable title="ĐỢT 2" data={winnersRound2} />
       </main>
 
       {/* BOTTOM NAVBAR */}
