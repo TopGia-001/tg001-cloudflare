@@ -28,7 +28,7 @@ const winnersRound1 = [
   {
     code: "SEML74HNNH",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Nguyễn Trần Trọng Nhân",
+    name: "Nguyễn Thị Thúy",
   },
   {
     code: "9XNZHCCY7D",
@@ -38,7 +38,7 @@ const winnersRound1 = [
   {
     code: "FSBEBWDSZ5",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Lương Duyên",
+    name: "Lương Khánh Duy",
   },
 ];
 
@@ -91,7 +91,7 @@ const winnersRound2 = [
   {
     code: "HWGGM8E8SR",
     prize: "Xiaomi Smart Air Purifier 4 compact EU (BHR5860EU) 27W",
-    name: "Nguyễn Phùng Như Ý",
+    name: "Trần Thị Trang",
   },
   {
     code: "GLTRCZ9TAP",
